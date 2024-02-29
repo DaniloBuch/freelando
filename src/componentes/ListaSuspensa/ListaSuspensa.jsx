@@ -65,9 +65,14 @@ export const ListaSuspensa = ({ titulo, opcoes }) => {
           if (focoAntigo === null) {
             return 0;
           }
+          if (focoAntigo === opcoes.length - 1) {
+            return opcoes.length - 1;
+          }
+
           return (focoAntigo += 1);
         });
         break;
+
       case "ArrowUp":
         evento.preventDefault();
         setOpcaoFocada((focoAntigo) => {
@@ -77,11 +82,24 @@ export const ListaSuspensa = ({ titulo, opcoes }) => {
           return (focoAntigo -= 1);
         });
         break;
+
       case "Enter":
         evento.preventDefault();
         setOpcaoFocada(null);
         setEstaAberta(false);
         setOpcaoSelecionada(opcoes[opcaoFocada]);
+        break;
+
+      case "Tab":
+        evento.preventDefault();
+        setOpcaoFocada(null);
+        setEstaAberta(false);
+        break;
+
+      case "Escape":
+        evento.preventDefault();
+        setOpcaoFocada(null);
+        setEstaAberta(false);
         break;
 
       default:
