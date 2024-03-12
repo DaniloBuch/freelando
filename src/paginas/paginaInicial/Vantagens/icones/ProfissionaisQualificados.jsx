@@ -42,8 +42,8 @@ export const ProfissionaisQualificados = () => {
       <path
         d="M36.0001 69.3996C54.4464 69.3996 69.4001 54.4459 69.4001 35.9996C69.4001 17.5533 54.4464 2.59961 36.0001 2.59961C17.5538 2.59961 2.6001 17.5533 2.6001 35.9996C2.6001 54.4459 17.5538 69.3996 36.0001 69.3996Z"
         stroke="#5754ED"
-        stroke-width="1.42"
-        stroke-miterlimit="10"
+        strokeWidth="1.42"
+        strokeMiterlimit="10"
       />
     </svg>
   );

@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import http from "../http";
 
 const usuarioInicial = {
   perfil: "",
@@ -101,8 +102,12 @@ export const CadastroUsuarioProvider = ({ children }) => {
   };
 
   const submeterUsuario = () => {
-    console.log(usuario);
-    navigate("/cadastro/concluido");
+    http
+      .post("auth/register", usuario)
+      .then(() => navigate("/cadastro/concluido"))
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const possoSelecionarInteresse = () => {
